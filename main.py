@@ -24,7 +24,7 @@ class LocalDatabase:
         cursor.execute('''
             INSERT INTO users (username, password, email)
             VALUES (?, ?, ?)
-        ''', (data['username'], data['password'], data['email']))
+        ''', (data[0], data[1], data[2]))
         self.conn.commit()
 
     def get_all_users(self):
