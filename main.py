@@ -52,9 +52,7 @@ class LocalDatabase:
         self.conn.commit()
 
 
-
 class CRUD:
-
     @staticmethod
     def get(endpoint, database):
         response = requests.get(endpoint)
@@ -95,14 +93,14 @@ class CRUD:
 
 
 new_data = {
-    'username': "John Smith",
+    'username': "John Doe",
     'password': "zaq1@WSX",
     'email': "example@example.com"
 }
 
 local_database = LocalDatabase('local_db.sqlite')
 
-# CRUD.get('https://jsonplaceholder.typicode.com/', local_database)
+CRUD.get('https://jsonplaceholder.typicode.com/', local_database)
 CRUD.post('https://jsonplaceholder.typicode.com/', new_data, local_database)
 CRUD.put('https://jsonplaceholder.typicode.com/', new_data, local_database)
 CRUD.delete('https://jsonplaceholder.typicode.com/', local_database)
